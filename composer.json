@@ -1,0 +1,14 @@
+{
+  "name": "ZhiyangLeeCN/rocketmq-php",
+  "description": "rocketmq client for php",
+  "type": "library",
+  "keywords": [
+    "Client",
+    "rocketmq"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Young\\RocketMQ\\": "src/"
+    }
+  }
+}
