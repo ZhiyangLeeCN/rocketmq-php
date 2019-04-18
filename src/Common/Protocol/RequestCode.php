@@ -1,0 +1,157 @@
+<?php
+/**
+ * author: LiZhiYang
+ * email: zhiyanglee@foxmail.com
+ */
+
+class RequestCode
+{
+    const SEND_MESSAGE = 10;
+
+    const PULL_MESSAGE = 11;
+
+    const QUERY_MESSAGE = 12;
+    const QUERY_BROKER_OFFSET = 13;
+    const QUERY_CONSUMER_OFFSET = 14;
+    const UPDATE_CONSUMER_OFFSET = 15;
+    const UPDATE_AND_CREATE_TOPIC = 17;
+    const GET_ALL_TOPIC_CONFIG = 21;
+    const GET_TOPIC_CONFIG_LIST = 22;
+
+    const GET_TOPIC_NAME_LIST = 23;
+
+    const UPDATE_BROKER_CONFIG = 25;
+
+    const GET_BROKER_CONFIG = 26;
+
+    const TRIGGER_DELETE_FILES = 27;
+
+    const GET_BROKER_RUNTIME_INFO = 28;
+    const SEARCH_OFFSET_BY_TIMESTAMP = 29;
+    const GET_MAX_OFFSET = 30;
+    const GET_MIN_OFFSET = 31;
+
+    const GET_EARLIEST_MSG_STORETIME = 32;
+
+    const VIEW_MESSAGE_BY_ID = 33;
+
+    const HEART_BEAT = 34;
+
+    const UNREGISTER_CLIENT = 35;
+
+    const CONSUMER_SEND_MSG_BACK = 36;
+
+    const END_TRANSACTION = 37;
+    const GET_CONSUMER_LIST_BY_GROUP = 38;
+
+    const CHECK_TRANSACTION_STATE = 39;
+
+    const NOTIFY_CONSUMER_IDS_CHANGED = 40;
+
+    const LOCK_BATCH_MQ = 41;
+
+    const UNLOCK_BATCH_MQ = 42;
+    const GET_ALL_CONSUMER_OFFSET = 43;
+
+    const GET_ALL_DELAY_OFFSET = 45;
+
+    const CHECK_CLIENT_CONFIG = 46;
+
+    const PUT_KV_CONFIG = 100;
+
+    const GET_KV_CONFIG = 101;
+
+    const DELETE_KV_CONFIG = 102;
+
+    const REGISTER_BROKER = 103;
+
+    const UNREGISTER_BROKER = 104;
+    const GET_ROUTEINTO_BY_TOPIC = 105;
+
+    const GET_BROKER_CLUSTER_INFO = 106;
+    const UPDATE_AND_CREATE_SUBSCRIPTIONGROUP = 200;
+    const GET_ALL_SUBSCRIPTIONGROUP_CONFIG = 201;
+    const GET_TOPIC_STATS_INFO = 202;
+    const GET_CONSUMER_CONNECTION_LIST = 203;
+    const GET_PRODUCER_CONNECTION_LIST = 204;
+    const WIPE_WRITE_PERM_OF_BROKER = 205;
+
+    const GET_ALL_TOPIC_LIST_FROM_NAMESERVER = 206;
+
+    const DELETE_SUBSCRIPTIONGROUP = 207;
+    const GET_CONSUME_STATS = 208;
+
+    const SUSPEND_CONSUMER = 209;
+
+    const RESUME_CONSUMER = 210;
+    const RESET_CONSUMER_OFFSET_IN_CONSUMER = 211;
+    const RESET_CONSUMER_OFFSET_IN_BROKER = 212;
+
+    const ADJUST_CONSUMER_THREAD_POOL = 213;
+
+    const WHO_CONSUME_THE_MESSAGE = 214;
+
+    const DELETE_TOPIC_IN_BROKER = 215;
+
+    const DELETE_TOPIC_IN_NAMESRV = 216;
+    const GET_KVLIST_BY_NAMESPACE = 219;
+
+    const RESET_CONSUMER_CLIENT_OFFSET = 220;
+
+    const GET_CONSUMER_STATUS_FROM_CLIENT = 221;
+
+    const INVOKE_BROKER_TO_RESET_OFFSET = 222;
+
+    const INVOKE_BROKER_TO_GET_CONSUMER_STATUS = 223;
+
+    const QUERY_TOPIC_CONSUME_BY_WHO = 300;
+
+    const GET_TOPICS_BY_CLUSTER = 224;
+
+    const REGISTER_FILTER_SERVER = 301;
+    const REGISTER_MESSAGE_FILTER_CLASS = 302;
+
+    const QUERY_CONSUME_TIME_SPAN = 303;
+
+    const GET_SYSTEM_TOPIC_LIST_FROM_NS = 304;
+    const GET_SYSTEM_TOPIC_LIST_FROM_BROKER = 305;
+
+    const CLEAN_EXPIRED_CONSUMEQUEUE = 306;
+
+    const GET_CONSUMER_RUNNING_INFO = 307;
+
+    const QUERY_CORRECTION_OFFSET = 308;
+    const CONSUME_MESSAGE_DIRECTLY = 309;
+
+    const SEND_MESSAGE_V2 = 310;
+
+    const GET_UNIT_TOPIC_LIST = 311;
+
+    const GET_HAS_UNIT_SUB_TOPIC_LIST = 312;
+
+    const GET_HAS_UNIT_SUB_UNUNIT_TOPIC_LIST = 313;
+
+    const CLONE_GROUP_OFFSET = 314;
+
+    const VIEW_BROKER_STATS_DATA = 315;
+
+    const CLEAN_UNUSED_TOPIC = 316;
+
+    const GET_BROKER_CONSUME_STATS = 317;
+
+        /**
+         * update the config of name server
+         */
+    const UPDATE_NAMESRV_CONFIG = 318;
+
+        /**
+         * get config from name server
+         */
+    const GET_NAMESRV_CONFIG = 319;
+
+    const SEND_BATCH_MESSAGE = 320;
+
+    const QUERY_CONSUME_QUEUE = 321;
+
+    const QUERY_DATA_VERSION = 322;
+}
