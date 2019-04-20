@@ -4,6 +4,8 @@
  * email: zhiyanglee@foxmail.com
  */
 
+namespace Young\RocketMQ\Common\Protocol;
+
 class RequestCode
 {
     const SEND_MESSAGE = 10;

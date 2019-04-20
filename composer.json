@@ -10,5 +10,8 @@
     "psr-4": {
       "Young\\RocketMQ\\": "src/"
     }
+  },
+  "require": {
+    "ext-json": "*"
   }
 }

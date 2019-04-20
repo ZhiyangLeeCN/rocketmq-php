@@ -4,6 +4,8 @@
  * email: zhiyanglee@foxmail.com
  */
 
+namespace Young\RocketMQ\Remoting\Protocol;
+
 class RemotingSysResponseCode
 {
     const SUCCESS = 0;

@@ -4,6 +4,10 @@
  * email: zhiyanglee@foxmail.com
  */
 
+namespace Young\RocketMQ\Common\Protocol;
+
+use Young\RocketMQ\Remoting\Protocol\RemotingSysResponseCode;
+
 class ResponseCode extends RemotingSysResponseCode
 {
     const FLUSH_DISK_TIMEOUT = 10;
