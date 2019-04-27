@@ -25,9 +25,9 @@ class SerializeType
         return null;
     }
 
-    public static function valueOf($type)
+    public static function valueOf($name)
     {
-        switch ($type) {
+        switch ($name) {
             case "JSON":
                 return self::JSON;
             case "ROCKETMQ":

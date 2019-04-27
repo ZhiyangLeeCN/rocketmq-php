@@ -48,17 +48,21 @@ class RemotingCommand
     private function headerEncode()
     {
         $this->makeCustomHeaderToNet();
-
-        return json_encode([
+        $data = [
             'code'                      =>  $this->code,
-            'language'                  =>  $this->language,
+            'language'                  =>  LanguageCode::nameOf($this->language),
             'version'                   =>  $this->version,
             'opaque'                    =>  $this->opaque,
             'flag'                      =>  $this->flag,
             'remark'                    =>  $this->remark,
-            'extFields'                 =>  $this->extFields,
             'serializeTypeCurrentRPC'   =>  SerializeType::nameOf($this->serializeTypeCurrentRPC)
-        ]);
+        ];
+
+        if (!is_null($this->customHeader)) {
+            $data['extFields'] = $this->extFields;
+        }
+
+        return json_encode($data);
     }
 
     public static function getProtocolType($source)
@@ -128,20 +132,20 @@ class RemotingCommand
 
     public static function decode($byteBuff)
     {
-        $length = IOUtil::readUInt32($byteBuff, 0);
-        $oriHeaderLen = IOUtil::readInt32($byteBuff, 4);
+        $length = strlen($byteBuff);
+        $oriHeaderLen = IOUtil::readInt32($byteBuff, 0);
         $headerLength = self::getHeaderLength($oriHeaderLen);
 
-        $headerData = substr($byteBuff, 8, $headerLength);
+        $headerData = substr($byteBuff, 4, $headerLength);
         $header = json_decode($headerData, true);
         $cmd = new static();
         $cmd->code = $header['code'];
-        $cmd->language = $header['language'];
+        $cmd->language = LanguageCode::valueOf($header['language']);
         $cmd->version = $header['version'];
         $cmd->opaque = $header['opaque'];
         $cmd->flag = $header['flag'];
-        $cmd->remark = $header['remark'];
-        $cmd->extFields = $header['extFields'];
+        $cmd->remark = isset($header['remark']) ? $header['remark'] : null;
+        $cmd->extFields = isset($header['extFields']) ? $header['extFields'] : null;
         $cmd->serializeTypeCurrentRPC = SerializeType::valueOf($header['serializeTypeCurrentRPC']);
 
         $bodyLength = $length - 4 - $headerLength;
@@ -219,6 +223,14 @@ class RemotingCommand
             throw $e;
 
         }
+    }
+
+    /**
+     * @return null
+     */
+    public function getBody()
+    {
+        return $this->body;
     }
 
     public function getType()

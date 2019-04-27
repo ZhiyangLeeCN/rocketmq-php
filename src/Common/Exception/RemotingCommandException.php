@@ -4,7 +4,7 @@
  * email: zhiyanglee@foxmail.com
  */
 
-namespace Young\RocketMQ\Remoting\exception;
+namespace Young\RocketMQ\Common\Exception;
 
 
 use Throwable;
